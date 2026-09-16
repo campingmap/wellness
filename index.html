@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 보령 원산도 웰니스 캠핑 · 원산도 소록도 야영장</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <meta name="description" content="2026년 10월 9일부터 10일까지, 충남 보령 원산도 소록도 야영장에서 열리는 1박 2일 웰니스 캠핑. 해양 카누, 선셋 다이닝과 버스킹 공연, 아침 명상 요가, 명화 클래식 감상까지." />
+  <meta property="og:title" content="2026 보령 원산도 웰니스 캠핑" />
+  <meta property="og:description" content="10.9(금) ~ 10.10(토) · 원산도 소록도 야영장 · 1박 2일 웰니스 캠핑" />
+  <meta property="og:image" content="poster.jpg" />
+
+  <!-- Pretendard (본문) -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+
+  <!-- Iconify -->
+  <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Pretendard Variable"', 'Pretendard', 'system-ui', 'sans-serif'],
+            display: ['Jalnan', '"Pretendard Variable"', 'Pretendard', 'sans-serif'],
+          },
+          colors: {
+            /* 포스터의 원산도 바다색 — 브랜드 주색 */
+            ocean: {
+              50:  '#eef8f8',
+              100: '#d5eeee',
+              200: '#aadcdc',
+              300: '#74c2c3',
+              400: '#3fa3a6',
+              500: '#22868b',
+              600: '#186d73',
+              700: '#15575d',
+              800: '#14474c',
+              900: '#0f3a3f',
+            },
+            /* 포스터 연도·요일의 노을빛 — 단일 액센트 */
+            sun: {
+              50:  '#fff9ec',
+              100: '#fdefcc',
+              200: '#fadd98',
+              300: '#f6c763',
+              400: '#f2b43c',
+              500: '#e89a1c',
+              600: '#cc7812',
+              700: '#a85a12',
+              800: '#884716',
+              900: '#703b16',
+            },
+            /* 원산도 모래사장 톤 */
+            sand: {
+              50:  '#fcfaf6',
+              100: '#f7f3ea',
+              200: '#efe6d3',
+            },
+          },
+          letterSpacing: { 'tightest': '-0.045em' },
+          boxShadow: {
+            soft: '0 24px 60px -28px rgba(15,58,63,0.22)',
+            softlg: '0 40px 90px -40px rgba(15,58,63,0.32)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 포스터 제목 글꼴 — 여기어때 잘난체 */
+    @font-face {
+      font-family: 'Jalnan';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+      font-weight: normal; font-style: normal; font-display: swap;
+    }
+
+    :root { color-scheme: light; }
+    html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    body { word-break: keep-all; overflow-wrap: anywhere; }
+
+    .u-ease { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+
+    /* 스크롤 등장 */
+    .reveal { opacity: 0; transform: translateY(2rem); filter: blur(4px); transition: opacity .9s cubic-bezier(0.16,1,0.3,1), transform .9s cubic-bezier(0.16,1,0.3,1), filter .9s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.is-in { opacity: 1; transform: translateY(0); filter: blur(0); }
+
+    @keyframes floatY { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-26px) } }
+    @keyframes floatY2 { 0%,100% { transform: translateY(0) } 50% { transform: translateY(20px) } }
+    @keyframes sparkle { 0% { transform: translateY(0) scale(1); opacity:0 } 15%{opacity:.9} 100% { transform: translateY(-140px) scale(.4); opacity:0 } }
+    .orb-a { animation: floatY 9s ease-in-out infinite; }
+    .orb-b { animation: floatY2 11s ease-in-out infinite; }
+
+    /* 프로그램 이름 띠 */
+    @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(calc(-1 * var(--mq-shift, 50%))) } }
+    .marquee-track { animation: marquee var(--mq-dur, 34s) linear infinite; will-change: transform; }
+    .marquee-track:hover { animation-play-state: paused; }
+
+    /* 필름 그레인 */
+    .noise::before {
+      content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none;
+      opacity: 0.03; mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* 바다 윤슬처럼 떠오르는 빛 */
+    .light-dot { position:absolute; bottom:0; width:5px; height:5px; border-radius:9999px; background:#f2b43c; box-shadow:0 0 10px 3px rgba(242,180,60,.45); animation: sparkle 6s linear infinite; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity:1; transform:none; filter:none; }
+      .orb-a,.orb-b,.marquee-track,.light-dot { animation: none !important; }
+    }
+
+    /* ===== 캠핑장 사진 탭 ===== */
+    .vt {
+      flex:0 0 auto; border-radius:9999px; padding:.5rem .8rem;
+      font-size:13px; font-weight:600; white-space:nowrap;
+      color:#15575d; background:#fff; border:1px solid rgba(24,109,115,.18);
+      transition:all .5s cubic-bezier(0.16,1,0.3,1); cursor:pointer;
+    }
+    @media (min-width:640px){ .vt { padding:.6rem 1.1rem; font-size:14px; } }
+    .vt:hover { border-color:rgba(24,109,115,.45); }
+    .vt[aria-selected="true"] {
+      color:#fff; background:#186d73; border-color:#186d73;
+      box-shadow:0 12px 26px -12px rgba(24,109,115,.7);
+    }
+    .vp[hidden] { display:none; }
+    .vp-desc { margin-bottom:.85rem; font-size:15px; line-height:1.5; color:#57534e; }
+    .vp-gal { position:relative; }
+    .vp-grid {
+      display:flex; gap:.75rem; overflow-x:auto; scroll-snap-type:x mandatory;
+      padding-bottom:.15rem; -ms-overflow-style:none; scrollbar-width:none;
+    }
+    .vp-grid::-webkit-scrollbar { display:none; }
+    .vp-grid > * { flex:0 0 100%; min-width:0; width:100%; scroll-snap-align:start; }
+    @media (min-width:640px){ .vp-grid > * { flex-basis:calc((100% - .75rem) / 2); width:calc((100% - .75rem) / 2); } }
+    @media (min-width:1024px){ .vp-grid > * { flex-basis:calc((100% - 1.5rem) / 3); width:calc((100% - 1.5rem) / 3); } }
+    .vp-grid img {
+      width:100%; aspect-ratio:3/2; object-fit:cover; border-radius:1.25rem;
+      border:1px solid rgba(24,109,115,.12); background:#fff;
+    }
+    .vp-gnav {
+      position:absolute; top:calc(50% - 1.1rem); transform:translateY(-50%);
+      display:grid; place-items:center; width:2.5rem; height:2.5rem; border-radius:9999px;
+      color:#14474c; border:1px solid rgba(24,109,115,.18); background:rgba(255,255,255,.92);
+      box-shadow:0 10px 26px -12px rgba(15,58,63,.5); backdrop-filter:blur(8px);
+      cursor:pointer; z-index:2; transition:all .5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .vp-gnav:hover { background:#fff; border-color:rgba(24,109,115,.45); }
+    .vp-gnav:active { transform:translateY(-50%) scale(.94); }
+    .vp-gnav[hidden] { display:none; }
+    .vp-gnav.prev { left:.6rem; }
+    .vp-gnav.next { right:.6rem; }
+    @media (min-width:1024px){ .vp-gnav.prev { left:-1.1rem; } .vp-gnav.next { right:-1.1rem; } }
+    .vp-dots { display:flex; justify-content:center; gap:.4rem; margin-top:.9rem; }
+    .vp-dots[hidden] { display:none; }
+    .vp-dots button {
+      width:.45rem; height:.45rem; border-radius:9999px; border:0; padding:0;
+      background:rgba(24,109,115,.22); cursor:pointer; transition:all .5s cubic-bezier(0.16,1,0.3,1);
+    }
+    .vp-dots button[aria-current="true"] { width:1.4rem; background:#186d73; }
+    .vp:not([hidden]) { animation: vpIn .5s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes vpIn { from { opacity:0; transform:translateY(.75rem) } to { opacity:1; transform:none } }
+    @media (prefers-reduced-motion: reduce) { .vp:not([hidden]) { animation:none; } }
+
+    /* 프로그램 카드 사진 두 장 교차 */
+    .xfade img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .xfade img + img { animation: xfade 9s ease-in-out infinite; }
+    @keyframes xfade { 0%,40% { opacity:0 } 50%,90% { opacity:1 } 100% { opacity:0 } }
+    @media (prefers-reduced-motion: reduce) { .xfade img + img { animation:none; opacity:0; } }
+  </style>
+</head>
+
+<body class="noise bg-white text-stone-700 font-sans antialiased selection:bg-sun-300/40 selection:text-ocean-900 min-h-[100dvh]">
+
+  <!-- ================= BACKGROUND FIELD ================= -->
+  <div aria-hidden="true" class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 bg-white"></div>
+    <div class="absolute inset-0" style="background:radial-gradient(120% 80% at 50% -10%, rgba(242,180,60,0.09), transparent 55%), radial-gradient(70% 55% at 90% 108%, rgba(24,109,115,0.08), transparent 55%);"></div>
+    <div class="orb-a absolute -top-24 -left-24 h-[32rem] w-[32rem] rounded-full blur-[120px]" style="background:radial-gradient(circle, rgba(242,180,60,0.13), transparent 70%);"></div>
+    <div class="orb-b absolute top-1/3 -right-32 h-[34rem] w-[34rem] rounded-full blur-[130px]" style="background:radial-gradient(circle, rgba(34,134,139,0.13), transparent 70%);"></div>
+  </div>
+
+  <!-- ================= NAV ================= -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto mt-4 w-[min(92%,72rem)]">
+      <nav class="u-ease flex items-center justify-between rounded-full border border-ocean-600/12 bg-white/75 px-4 py-2.5 pl-5 backdrop-blur-xl shadow-[0_8px_40px_-16px_rgba(15,58,63,0.3)]">
+        <a href="#top" class="flex items-center gap-3 group">
+          <img src="logo.png" alt="캠핑여지도 로고" width="40" height="40" class="h-10 w-10 shrink-0 rounded-[0.85rem] object-contain u-ease group-hover:scale-[1.04]" />
+          <span class="flex flex-col leading-tight">
+            <span class="text-[13.5px] font-semibold tracking-tight text-ocean-800">2026 보령 원산도</span>
+            <span class="text-[12px] font-bold tracking-tight text-sun-700">웰니스 캠핑</span>
+          </span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-1 text-[13.5px] text-stone-600">
+          <a href="#about" class="u-ease rounded-full px-3.5 py-2 hover:bg-ocean-600/8 hover:text-ocean-800">행사 소개</a>
+          <a href="#schedule" class="u-ease rounded-full px-3.5 py-2 hover:bg-ocean-600/8 hover:text-ocean-800">일정</a>
+          <a href="#highlights" class="u-ease rounded-full px-3.5 py-2 hover:bg-ocean-600/8 hover:text-ocean-800">프로그램</a>
+          <a href="#venue" class="u-ease rounded-full px-3.5 py-2 hover:bg-ocean-600/8 hover:text-ocean-800">야영장 소개</a>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="#apply" class="u-ease group hidden sm:inline-flex items-center gap-2 rounded-full bg-ocean-600 pl-5 pr-2 py-2 text-[13.5px] font-semibold text-white hover:scale-[1.02] active:scale-[0.98] hover:bg-ocean-500 shadow-[0_10px_24px_-10px_rgba(24,109,115,0.7)]">
+            참가 신청
+            <span class="grid h-7 w-7 place-items-center rounded-full bg-sun-400 text-ocean-900">
+              <iconify-icon icon="solar:arrow-right-linear" class="u-ease group-hover:translate-x-0.5"></iconify-icon>
+            </span>
+          </a>
+          <button id="menuBtn" class="lg:hidden grid h-10 w-10 place-items-center rounded-full border border-ocean-600/15 bg-white text-ocean-800 u-ease hover:bg-ocean-50" aria-label="메뉴 열기">
+            <iconify-icon icon="solar:hamburger-menu-linear" class="text-xl"></iconify-icon>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 모바일 메뉴 -->
+  <div id="mobileMenu" class="fixed inset-0 z-[55] hidden">
+    <div class="absolute inset-0 bg-sand-50/90 backdrop-blur-2xl"></div>
+    <div class="relative flex h-[100dvh] flex-col items-center justify-center gap-3 px-8 text-center">
+      <button id="menuClose" class="absolute right-6 top-7 grid h-11 w-11 place-items-center rounded-full border border-ocean-600/15 bg-white text-ocean-800" aria-label="메뉴 닫기">
+        <iconify-icon icon="solar:close-circle-linear" class="text-2xl"></iconify-icon>
+      </button>
+      <img src="logo.png" alt="캠핑여지도 로고" width="72" height="72" class="mb-2 h-[4.5rem] w-[4.5rem] rounded-2xl object-contain" />
+      <p class="mb-4 text-[13px] font-bold text-sun-700">2026 보령 원산도 웰니스 캠핑</p>
+      <a href="#about" class="mob-link u-ease text-2xl font-semibold text-ocean-800 hover:text-sun-700">행사 소개</a>
+      <a href="#schedule" class="mob-link u-ease text-2xl font-semibold text-ocean-800 hover:text-sun-700">일정</a>
+      <a href="#highlights" class="mob-link u-ease text-2xl font-semibold text-ocean-800 hover:text-sun-700">프로그램</a>
+      <a href="#venue" class="mob-link u-ease text-2xl font-semibold text-ocean-800 hover:text-sun-700">야영장 소개</a>
+      <a href="#apply" class="mob-link u-ease mt-4 inline-flex items-center gap-2 rounded-full bg-ocean-600 px-7 py-3.5 text-lg font-semibold text-white">참가 신청하기 <iconify-icon icon="solar:arrow-right-linear"></iconify-icon></a>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="relative overflow-hidden px-5 pt-32 pb-16 sm:pt-40 md:pb-24">
+      <div class="mx-auto grid w-[min(94%,74rem)] grid-cols-12 items-start gap-x-4 gap-y-9 sm:gap-x-6 lg:gap-x-8 lg:gap-y-0">
+
+        <!-- 제목 -->
+        <div class="col-span-7 lg:row-start-1">
+          <div class="reveal inline-flex items-center gap-2 rounded-full border border-ocean-600/18 bg-ocean-600/8 px-2.5 py-1 text-[10.5px] font-bold tracking-[0.02em] text-ocean-700 sm:px-3 sm:py-1.5 sm:text-[12px]">
+            <span class="relative flex h-1.5 w-1.5"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sun-400 opacity-80"></span><span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-sun-500"></span></span>
+            2027 섬 비엔날레 캠핑상품 시범운영
+          </div>
+
+          <h1 class="reveal mt-4 font-display text-[9vw] leading-[1.08] tracking-tight text-ocean-900 sm:mt-6 sm:text-[6.6vw] lg:text-[5.6rem] lg:leading-[1.04]" style="transition-delay:.06s">
+            <span class="block text-[0.42em] text-sun-600">2026</span>
+            <span class="block">보령 원산도</span>
+            <span class="relative inline-block">
+              <span class="bg-gradient-to-br from-ocean-400 via-ocean-600 to-ocean-900 bg-clip-text text-transparent">웰니스 캠핑</span>
+              <svg class="absolute -bottom-2 left-0 w-full lg:-bottom-3" height="16" viewBox="0 0 300 16" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M2 11C60 5 120 5 180 8C230 10 270 10 298 6" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/><defs><linearGradient id="g" x1="0" y1="0" x2="300" y2="0"><stop stop-color="#f6c763"/><stop offset="1" stop-color="#e89a1c"/></linearGradient></defs></svg>
+            </span>
+          </h1>
+        </div>
+
+        <!-- 포스터 -->
+        <div class="reveal col-span-5 lg:col-start-8 lg:row-start-1 lg:row-span-2 lg:self-center" style="transition-delay:.14s">
+          <div class="relative">
+            <div class="absolute -inset-6 rounded-[2.6rem] bg-ocean-400/15 blur-2xl"></div>
+            <div class="relative rounded-[1.25rem] border border-ocean-600/12 bg-white p-1 shadow-softlg u-ease sm:rounded-[2rem] sm:p-1.5 lg:hover:-translate-y-1 lg:hover:shadow-[0_50px_100px_-40px_rgba(15,58,63,0.45)]">
+              <div class="relative overflow-hidden rounded-[calc(1.25rem-0.25rem)] sm:rounded-[calc(2rem-0.375rem)]">
+                <img src="poster.jpg" alt="2026 보령 원산도 웰니스 캠핑 포스터 — 10월 9일부터 10일까지 원산도 해수욕장 소록도 야영장" width="1080" height="1350" loading="eager" decoding="async" class="aspect-[4/5] w-full object-cover" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 본문 · 버튼 · 지표 -->
+        <div class="col-span-12 lg:col-span-7 lg:col-start-1 lg:row-start-2">
+          <p class="reveal max-w-2xl text-[15.5px] leading-relaxed text-stone-600 sm:text-[16.5px] lg:mt-9 lg:text-lg" style="transition-delay:.12s">
+            바다와 솔숲이 맞닿은 <b class="font-semibold text-ocean-800">원산도 소록도 야영장</b>에서 1박 2일 웰니스 캠핑이 열립니다.<br />
+            바다 위 카누, 노을 아래 저녁 식사와 버스킹 공연,<br class="hidden sm:block" />
+            별빛 아래 명화 클래식 감상과 아침 해변 명상 요가까지.<br />
+            섬에서 온전히 쉬어가는 하루를 준비했어요.
+          </p>
+
+          <div class="reveal mt-7 flex flex-wrap items-center gap-2.5 sm:gap-3 lg:mt-10" style="transition-delay:.18s">
+            <a href="#apply" class="group inline-flex items-center gap-2.5 rounded-full bg-ocean-600 pl-6 pr-2 py-3 text-[14.5px] font-semibold text-white u-ease hover:scale-[1.02] active:scale-[0.98] hover:bg-ocean-500 shadow-[0_16px_36px_-14px_rgba(24,109,115,0.75)] sm:pl-7 sm:pr-2.5 sm:py-3.5 sm:text-[15px]">
+              참가신청하기
+              <span class="grid h-8 w-8 place-items-center rounded-full bg-sun-400 text-ocean-900"><iconify-icon icon="solar:arrow-right-up-linear" class="u-ease group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></iconify-icon></span>
+            </a>
+            <a href="#schedule" class="group inline-flex items-center gap-2 rounded-full border border-ocean-600/25 bg-white px-5 py-3 text-[14.5px] font-medium text-ocean-800 u-ease hover:border-ocean-600/50 hover:bg-ocean-50 hover:shadow-soft sm:px-6 sm:py-3.5 sm:text-[15px]">
+              <iconify-icon icon="solar:calendar-linear" class="text-sun-600"></iconify-icon>
+              프로그램 일정보기
+            </a>
+            <a href="#venue" class="group inline-flex items-center gap-2 rounded-full border border-ocean-600/25 bg-white px-5 py-3 text-[14.5px] font-medium text-ocean-800 u-ease hover:border-ocean-600/50 hover:bg-ocean-50 hover:shadow-soft sm:px-6 sm:py-3.5 sm:text-[15px]">
+              <iconify-icon icon="ph:tent" class="text-sun-600"></iconify-icon>
+              야영장 소개
+            </a>
+          </div>
+
+          <dl class="reveal mt-9 grid max-w-lg grid-cols-3 gap-4 border-t border-ocean-600/12 pt-6 sm:gap-6 sm:pt-7 lg:mt-12" style="transition-delay:.24s">
+            <div>
+              <dt class="text-[11px] font-medium uppercase tracking-wider text-stone-400 sm:text-[12px]">일정</dt>
+              <dd class="mt-1 text-[17px] font-bold leading-tight text-ocean-800 sm:text-xl">10.9~10.10<span class="block text-[12px] font-semibold text-stone-500 sm:text-[13px]">(1박 2일)</span></dd>
+            </div>
+            <div>
+              <dt class="text-[11px] font-medium uppercase tracking-wider text-stone-400 sm:text-[12px]">모집 인원</dt>
+              <dd class="mt-1 text-[17px] font-bold text-ocean-800 sm:text-xl">90명</dd>
+            </div>
+            <div>
+              <dt class="text-[11px] font-medium uppercase tracking-wider text-stone-400 sm:text-[12px]">참가비</dt>
+              <dd class="mt-1 text-[17px] font-bold leading-tight text-ocean-800 sm:text-xl">1인 5만원<span class="block text-[12px] font-semibold text-stone-500 sm:text-[13px]">(저녁 식사 포함)</span></dd>
+            </div>
+          </dl>
+        </div>
+
+      </div>
+
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+        <span class="light-dot" style="left:12%; animation-delay:0s"></span>
+        <span class="light-dot" style="left:28%; animation-delay:2.1s"></span>
+        <span class="light-dot" style="left:47%; animation-delay:3.4s"></span>
+        <span class="light-dot" style="left:63%; animation-delay:1.2s"></span>
+        <span class="light-dot" style="left:81%; animation-delay:4.2s"></span>
+        <span class="light-dot" style="left:91%; animation-delay:2.7s"></span>
+      </div>
+    </section>
+
+    <!-- ================= PROGRAM MARQUEE ================= -->
+    <section class="relative border-y border-ocean-600/10 bg-sand-100 py-7">
+      <div class="relative overflow-hidden" style="mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)">
+        <div class="marquee-track flex w-max items-center gap-10 whitespace-nowrap px-5 text-ocean-800 sm:gap-14">
+          <span class="flex items-center gap-10 sm:gap-14">
+            <span class="flex items-center gap-2.5 text-[15px] font-semibold sm:text-lg"><iconify-icon icon="mdi:kayaking" class="text-2xl text-sun-600"></iconify-icon>해양 카누</span>
+            <span class="flex items-center gap-2.5 text-[15px] font-semibold sm:text-lg"><iconify-icon icon="solar:sun-fog-bold" class="text-2xl text-sun-600"></iconify-icon>선셋 다이닝</span>
+            <span class="flex items-center gap-2.5 text-[15px] font-semibold sm:text-lg"><iconify-icon icon="solar:microphone-large-bold" class="text-2xl text-sun-600"></iconify-icon>버스킹 공연</span>
+            <span class="flex items-center gap-2.5 text-[15px] font-semibold sm:text-lg"><iconify-icon icon="solar:camera-bold" class="text-2xl text-sun-600"></iconify-icon>캠핑 포토존</span>
+            <span class="flex items-center gap-2.5 text-[15px] font-semibold sm:text-lg"><iconify-icon icon="solar:gallery-wide-bold" class="text-2xl text-sun-600"></iconify-icon>명화 클래식 감상</span>
+            <span class="flex items-center gap-2.5 text-[15px] font-semibold sm:text-lg"><iconify-icon icon="mdi:meditation" class="text-2xl text-sun-600"></iconify-icon>아침 명상 요가</span>
+            <span class="flex items-center gap-2.5 text-[15px] font-semibold sm:text-lg"><iconify-icon icon="mdi:go-kart" class="text-2xl text-sun-600"></iconify-icon>모빌리티 체험</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT / 행사 소개 ================= -->
+    <section id="about" class="px-5 py-24 md:py-32">
+      <div class="mx-auto w-[min(94%,74rem)]">
+        <div class="reveal max-w-2xl">
+          <span class="inline-flex items-center gap-2 rounded-full bg-ocean-600/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-ocean-700">행사 소개</span>
+          <h2 class="mt-5 text-4xl font-extrabold leading-snug tracking-tight text-ocean-900 sm:text-5xl">섬에서 쉬어가는<br class="sm:hidden" /> 1박 2일</h2>
+          <p class="mt-5 text-[16px] leading-relaxed text-stone-600">원산도 캠핑 상품을 처음 선보이는 자리이자, 2027년 섬 비엔날레를 미리 만나는 캠핑 프로그램입니다.<br class="hidden md:block" /> 바다 앞 야영장에서 몸과 마음을 채우는 웰니스 프로그램을 함께 즐겨요.</p>
+        </div>
+
+        <div class="reveal mt-14">
+          <div class="relative rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-softlg">
+            <div class="relative aspect-[4/3] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-ocean-900 sm:aspect-[16/9]">
+              <img src="photos/web/about-aerial.jpg" alt="하늘에서 내려다본 원산도 해수욕장과 소록도 야영장" width="1600" height="900" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover" />
+              <span class="absolute inset-0" style="background:linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.1) 45%, rgba(8,30,33,.7))"></span>
+              <div class="absolute inset-x-0 bottom-0 p-6 sm:p-10">
+                <p class="text-[12px] font-bold uppercase tracking-[0.2em] text-sun-300 sm:text-[14px]">wonsando wellness camping</p>
+                <p class="mt-2 font-display text-3xl leading-tight text-white sm:text-5xl" style="text-shadow:0 6px 40px rgba(0,0,0,.45)">원산도 소록도 야영장</p>
+                <p class="mt-2 text-[13px] font-semibold text-white/85 sm:text-[15px]">2026. 10. 9 — 10 · 충남 보령시 오천면 원산도리</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <div class="reveal rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft">
+            <div class="h-full rounded-[calc(2rem-0.375rem)] p-6">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-ocean-600/10 ring-1 ring-ocean-600/18"><iconify-icon icon="solar:water-sun-bold" class="text-xl text-ocean-600"></iconify-icon></span>
+              <h3 class="mt-4 text-lg font-bold text-ocean-900">바다 바로 앞 캠핑</h3>
+              <p class="mt-1.5 text-[14.5px] leading-snug text-stone-600">해수욕장 모래사장과 솔숲 사이에 자리한 야영장에서 파도 소리와 함께 머물러요.</p>
+            </div>
+          </div>
+          <div class="reveal rounded-[2rem] border border-sun-400/50 bg-gradient-to-b from-sun-50 to-white p-1.5 shadow-soft" style="transition-delay:.06s">
+            <div class="h-full rounded-[calc(2rem-0.375rem)] p-6">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-sun-400 text-ocean-900"><iconify-icon icon="mdi:meditation" class="text-xl"></iconify-icon></span>
+              <h3 class="mt-4 text-lg font-bold text-ocean-900">웰니스 프로그램</h3>
+              <p class="mt-1.5 text-[14.5px] leading-snug text-stone-600">해양 카누, 선셋 다이닝, 명화 클래식 감상, 아침 명상 요가로 채운 1박 2일.</p>
+            </div>
+          </div>
+          <div class="reveal rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft" style="transition-delay:.12s">
+            <div class="h-full rounded-[calc(2rem-0.375rem)] p-6">
+              <span class="grid h-11 w-11 place-items-center rounded-xl bg-ocean-600/10 ring-1 ring-ocean-600/18"><iconify-icon icon="solar:gallery-wide-bold" class="text-xl text-ocean-600"></iconify-icon></span>
+              <h3 class="mt-4 text-lg font-bold text-ocean-900">섬 비엔날레 미리보기</h3>
+              <p class="mt-1.5 text-[14.5px] leading-snug text-stone-600">2027년 섬 비엔날레를 앞두고 원산도 캠핑 상품을 먼저 경험해 보는 시범 운영입니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCHEDULE / 일정 ================= -->
+    <section id="schedule" class="relative border-y border-ocean-600/10 bg-sand-100 px-5 py-24 md:py-32">
+      <div class="mx-auto w-[min(94%,74rem)]">
+        <div class="reveal flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div class="max-w-xl">
+            <span class="inline-flex items-center gap-2 rounded-full bg-ocean-600/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-ocean-700">일정</span>
+            <h2 class="mt-5 text-4xl font-extrabold leading-snug tracking-tight text-ocean-900 sm:text-5xl">1박 2일 웰니스 캠핑 일정</h2>
+          </div>
+          <p class="max-w-sm text-[14px] leading-snug text-stone-500">※ 상기 일정은 사정에 따라 변경될 수 있습니다.</p>
+        </div>
+
+        <div class="mt-14 grid gap-6 lg:grid-cols-2">
+
+          <!-- DAY 1 -->
+          <div class="reveal rounded-[2rem] border border-sun-400/50 bg-gradient-to-b from-sun-50 to-white p-1.5 shadow-[0_28px_70px_-32px_rgba(232,154,28,0.45)]">
+            <div class="h-full rounded-[calc(2rem-0.375rem)] p-6 sm:p-8">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-[12px] font-bold uppercase tracking-[0.18em] text-sun-700">Day 01 · 10.9 (금)</p>
+                  <p class="text-xl font-bold text-ocean-900">첫째 날</p>
+                </div>
+                <span class="grid h-11 w-11 place-items-center rounded-full bg-sun-400 text-ocean-900"><iconify-icon icon="solar:sun-fog-bold" class="text-xl"></iconify-icon></span>
+              </div>
+              <ul class="mt-6 space-y-5">
+                <li class="relative border-l border-sun-300 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <p class="text-[13px] font-semibold text-sun-700">13:00 ~</p>
+                  <p class="text-[15px] font-medium text-stone-800">체크인 · 텐트 피칭</p>
+                </li>
+                <li class="relative border-l border-sun-300 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <p class="text-[13px] font-semibold text-sun-700">14:00 ~ 17:00</p>
+                      <p class="text-[15px] font-medium text-stone-800">해양 카누 체험</p>
+                      <p class="text-[13px] text-stone-500">원산도 바닷가에서 2인승 카누</p>
+                    </div>
+                    <div class="border-t border-sun-300/70 pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0">
+                      <p class="text-[13px] font-semibold text-sun-700">14:00 ~ 17:00</p>
+                      <p class="text-[15px] font-medium text-stone-800">캠핑 포토존</p>
+                      <p class="text-[13px] text-stone-500">바다를 배경으로 인생샷 한 장</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="relative border-l border-sun-300 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <p class="text-[13px] font-semibold text-sun-700">17:30 ~ 19:30</p>
+                  <p class="text-[15px] font-medium text-stone-800">선셋 다이닝 · 가수 공연</p>
+                  <p class="text-[13px] text-stone-500">노을 아래 다함께 즐기는 저녁 식사와 버스킹</p>
+                </li>
+                <li class="relative border-l border-sun-300 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <p class="text-[13px] font-semibold text-sun-700">20:00 ~ 21:00</p>
+                  <p class="text-[15px] font-medium text-stone-800">명화 클래식 감상</p>
+                  <p class="text-[13px] text-stone-500">빔 스크린 위 명화와 어울리는 클래식 음악</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- DAY 2 -->
+          <div class="reveal rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft" style="transition-delay:.06s">
+            <div class="h-full rounded-[calc(2rem-0.375rem)] p-6 sm:p-8">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-[12px] font-bold uppercase tracking-[0.18em] text-sun-700">Day 02 · 10.10 (토)</p>
+                  <p class="text-xl font-bold text-ocean-900">둘째 날</p>
+                </div>
+                <span class="grid h-11 w-11 place-items-center rounded-full bg-ocean-600/10 ring-1 ring-ocean-600/18"><iconify-icon icon="mdi:meditation" class="text-xl text-ocean-600"></iconify-icon></span>
+              </div>
+              <ul class="mt-6 space-y-5">
+                <li class="relative border-l border-ocean-600/15 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <p class="text-[13px] font-semibold text-sun-700">08:00 ~ 09:00</p>
+                  <p class="text-[15px] font-medium text-stone-800">자율 조식</p>
+                </li>
+                <li class="relative border-l border-ocean-600/15 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <p class="text-[13px] font-semibold text-sun-700">09:00 ~ 10:00</p>
+                  <p class="text-[15px] font-medium text-stone-800">아침 명상 요가 클래스</p>
+                  <p class="text-[13px] text-stone-500">아침 해변에서 전문 강사와 함께</p>
+                </li>
+                <li class="relative border-l border-ocean-600/15 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <p class="text-[13px] font-semibold text-sun-700">11:00 ~ 12:00</p>
+                  <p class="text-[15px] font-medium text-stone-800">캠핑장 퇴소</p>
+                </li>
+                <li class="relative border-l border-ocean-600/15 pl-5">
+                  <span class="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-sun-500"></span>
+                  <p class="text-[13px] font-semibold text-sun-700">12:00 ~ 14:00</p>
+                  <p class="text-[15px] font-medium text-stone-800">원산도 모빌리티 공공플랫폼 체험</p>
+                  <p class="text-[13px] text-stone-500">퇴소 후 모빌리티 카트 &amp; 범퍼카</p>
+                </li>
+              </ul>
+              <div class="mt-8 rounded-2xl border border-sun-400/40 bg-sun-50 p-4">
+                <p class="flex items-start gap-2 text-[13px] font-medium leading-snug text-ocean-800">
+                  <iconify-icon icon="solar:heart-bold" class="mt-0.5 shrink-0 text-sun-600"></iconify-icon>
+                  섬에서의 여유를 품고, 다음에 또 만나요
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HIGHLIGHTS / 프로그램 ================= -->
+    <section id="highlights" class="px-5 py-24 md:py-32">
+      <div class="mx-auto w-[min(94%,74rem)]">
+        <div class="reveal max-w-2xl">
+          <span class="inline-flex items-center gap-2 rounded-full bg-ocean-600/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-ocean-700">프로그램 소개</span>
+          <h2 class="mt-5 text-4xl font-extrabold leading-snug tracking-tight text-ocean-900 sm:text-5xl">바다와 함께 채우는<br class="hidden sm:block" /> 웰니스 프로그램</h2>
+        </div>
+
+        <div class="mt-14 grid gap-4 lg:grid-cols-6">
+
+          <!-- 해양 카누 -->
+          <article class="reveal group u-ease lg:col-span-3 rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft hover:shadow-softlg hover:border-sun-400/50">
+            <div class="relative flex h-full min-h-[22rem] flex-col justify-end overflow-hidden rounded-[calc(2rem-0.375rem)] p-8">
+              <div class="xfade absolute inset-0 u-ease group-hover:scale-[1.04]">
+                <img src="photos/web/program-canoe-1.jpg" alt="바다 위에서 카누를 타는 참가자" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/program-canoe-2.jpg" alt="여러 팀이 함께 카누를 타는 모습" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/95 via-ocean-900/55 to-ocean-900/10"></div>
+              <div class="relative">
+                <span class="grid h-12 w-12 place-items-center rounded-2xl bg-sun-400 text-ocean-900"><iconify-icon icon="mdi:kayaking" class="text-2xl"></iconify-icon></span>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                  <h3 class="text-2xl font-bold text-white">해양 카누</h3>
+                  <span class="rounded-full bg-sun-400/20 px-2.5 py-1 text-[11px] font-bold text-sun-200 ring-1 ring-sun-400/40">안전요원 배치</span>
+                </div>
+                <p class="mt-2 max-w-md text-[15px] leading-snug text-white/85">원산도 바닷가에서 즐기는 2인승 카누<br />여러 팀이 돌아가며 탑승해요</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 선셋 다이닝 -->
+          <article class="reveal group u-ease lg:col-span-3 rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft hover:shadow-softlg hover:border-sun-400/50">
+            <div class="relative flex h-full min-h-[22rem] flex-col justify-end overflow-hidden rounded-[calc(2rem-0.375rem)] p-8">
+              <div class="xfade absolute inset-0 u-ease group-hover:scale-[1.04]">
+                <img src="photos/web/program-dining-2.jpg" alt="바닷가에 테이블을 놓고 함께 식사하는 모습" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/program-dining-1.jpg" alt="조명 아래 다함께 저녁을 즐기는 캠퍼들" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/95 via-ocean-900/55 to-ocean-900/10"></div>
+              <div class="relative">
+                <span class="grid h-12 w-12 place-items-center rounded-2xl bg-sun-400 text-ocean-900"><iconify-icon icon="solar:sun-fog-bold" class="text-2xl"></iconify-icon></span>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                  <h3 class="text-2xl font-bold text-white">선셋 다이닝 &amp; 버스킹</h3>
+                  <span class="rounded-full bg-sun-400/20 px-2.5 py-1 text-[11px] font-bold text-sun-200 ring-1 ring-sun-400/40">저녁 식사</span>
+                </div>
+                <p class="mt-2 max-w-md text-[15px] leading-snug text-white/85">노을 지는 바닷가 테이블에서 가수 공연과 함께하는 저녁<br />메뉴는 보령 해물라면 또는 바비큐로 준비 중이에요</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 아침 명상 요가 -->
+          <article class="reveal group u-ease lg:col-span-2 rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft hover:shadow-softlg hover:border-sun-400/50">
+            <div class="relative flex h-full min-h-[20rem] flex-col justify-end overflow-hidden rounded-[calc(2rem-0.375rem)] p-7">
+              <div class="xfade absolute inset-0 u-ease group-hover:scale-[1.04]">
+                <img src="photos/web/program-yoga-1.jpg" alt="잔디 위에서 요가 매트를 펴고 요가하는 참가자들" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/program-yoga-2.jpg" alt="매트 위에서 명상하는 참가자" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/95 via-ocean-900/55 to-ocean-900/10"></div>
+              <div class="relative">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl bg-sun-400 text-ocean-900"><iconify-icon icon="mdi:meditation" class="text-xl"></iconify-icon></span>
+                <h3 class="mt-4 text-xl font-bold text-white">아침 명상 요가</h3>
+                <p class="mt-2 text-[15px] leading-snug text-white/85">둘째 날 아침, 해변에서<br />전문 강사와 함께하는 클래스</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 명화 클래식 감상 -->
+          <article class="reveal group u-ease lg:col-span-2 rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft hover:shadow-softlg hover:border-sun-400/50">
+            <div class="relative flex h-full min-h-[20rem] flex-col justify-end overflow-hidden rounded-[calc(2rem-0.375rem)] p-7">
+              <div class="xfade absolute inset-0 u-ease group-hover:scale-[1.04]">
+                <img src="photos/web/program-classic-1.jpg" alt="밤에 빔 스크린으로 고흐의 별이 빛나는 밤을 감상하는 모습" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/program-classic-2.jpg" alt="빔 스크린에 띄운 밀레의 이삭 줍는 여인들" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/95 via-ocean-900/55 to-ocean-900/10"></div>
+              <div class="relative">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl bg-sun-400 text-ocean-900"><iconify-icon icon="solar:gallery-wide-bold" class="text-xl"></iconify-icon></span>
+                <h3 class="mt-4 text-xl font-bold text-white">명화 클래식 감상</h3>
+                <p class="mt-2 text-[15px] leading-snug text-white/85">빔 스크린 위 세계적인 명화와<br />어울리는 클래식 음악</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 캠핑 포토존 -->
+          <article class="reveal group u-ease lg:col-span-2 rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft hover:shadow-softlg hover:border-sun-400/50">
+            <div class="relative flex h-full min-h-[20rem] flex-col justify-end overflow-hidden rounded-[calc(2rem-0.375rem)] p-7">
+              <div class="xfade absolute inset-0 u-ease group-hover:scale-[1.04]">
+                <img src="photos/web/program-photozone-1.jpg" alt="바닷가 모래사장에 꾸민 캠핑 포토존" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/program-photozone-2.jpg" alt="풍선과 조명으로 꾸민 캠핑 포토존" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/95 via-ocean-900/55 to-ocean-900/10"></div>
+              <div class="relative">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl bg-sun-400 text-ocean-900"><iconify-icon icon="solar:camera-bold" class="text-xl"></iconify-icon></span>
+                <h3 class="mt-4 text-xl font-bold text-white">캠핑 포토존</h3>
+                <p class="mt-2 text-[15px] leading-snug text-white/85">전문 포토존 업체와 꾸미는<br />바닷가 감성 포토존</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 모빌리티 체험 -->
+          <article class="reveal group u-ease lg:col-span-4 rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft hover:shadow-softlg hover:border-sun-400/50">
+            <div class="relative flex h-full min-h-[20rem] flex-col justify-end overflow-hidden rounded-[calc(2rem-0.375rem)] p-7">
+              <img src="photos/web/program-mobility.jpg" alt="원산도 모빌리티 공공플랫폼의 범퍼카" width="1200" height="800" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover u-ease group-hover:scale-[1.04]" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/95 via-ocean-900/55 to-ocean-900/10"></div>
+              <div class="relative">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl bg-sun-400 text-ocean-900"><iconify-icon icon="mdi:go-kart" class="text-xl"></iconify-icon></span>
+                <div class="mt-4 flex flex-wrap items-center gap-2">
+                  <h3 class="text-xl font-bold text-white">원산도 모빌리티 공공플랫폼</h3>
+                  <span class="rounded-full bg-sun-400/20 px-2.5 py-1 text-[11px] font-bold text-sun-200 ring-1 ring-sun-400/40">둘째 날 퇴소 후</span>
+                </div>
+                <p class="mt-2 text-[15px] leading-snug text-white/85">모빌리티 카트와 범퍼카로 마무리하는 원산도 여행</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- SNS 후기 이벤트 -->
+          <article class="reveal u-ease lg:col-span-2 rounded-[2rem] border border-sun-400/50 bg-gradient-to-b from-sun-50 to-white p-1.5 shadow-soft">
+            <div class="flex h-full min-h-[20rem] flex-col justify-between rounded-[calc(2rem-0.375rem)] p-7">
+              <span class="grid h-11 w-11 place-items-center rounded-2xl bg-sun-400 text-ocean-900"><iconify-icon icon="solar:chat-round-like-bold" class="text-xl"></iconify-icon></span>
+              <div>
+                <p class="text-[12px] font-bold uppercase tracking-[0.18em] text-sun-700">Event</p>
+                <h3 class="mt-1 text-xl font-bold text-ocean-900">SNS 후기 이벤트</h3>
+                <p class="mt-2 text-[15px] leading-snug text-stone-600">행사와 프로그램 후기를 SNS에 남겨주세요.<br />협찬품을 드리는 후기 이벤트를 준비하고 있어요.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VENUE / 야영장 소개 ================= -->
+    <section id="venue" class="relative border-t border-ocean-600/10 bg-sand-100 px-5 py-24 md:py-32">
+      <div class="mx-auto w-[min(94%,74rem)]">
+
+        <div class="reveal grid gap-10 lg:grid-cols-12 lg:gap-14">
+          <div class="lg:col-span-7">
+            <span class="inline-flex items-center gap-2 rounded-full bg-ocean-600/8 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.15em] text-ocean-700">야영장 소개</span>
+            <h2 class="mt-5 text-4xl font-extrabold leading-snug tracking-tight text-ocean-900 sm:text-5xl">원산도 소록도 야영장</h2>
+            <p class="mt-5 text-[16px] leading-relaxed text-stone-600">
+              원산도 해수욕장 모래사장 바로 뒤, 솔숲을 등진 야영장입니다.<br />
+              캠핑 사이트 <b class="font-semibold text-ocean-800">36개</b>가 바다를 향해 펼쳐져 있고,<br />
+              해수욕장 끝 작은 섬을 잇는 해상 데크길도 가까워요.
+            </p>
+
+            <p class="mt-5 flex items-start gap-2 text-[15px] font-semibold text-ocean-800">
+              <iconify-icon icon="solar:map-point-bold" class="mt-0.5 shrink-0 text-sun-600"></iconify-icon>
+              충남 보령시 오천면 원산도리 1860-6
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2.5">
+              <a href="https://map.kakao.com/?q=%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C%20%EC%98%A4%EC%B2%9C%EB%A9%B4%20%EC%9B%90%EC%82%B0%EB%8F%84%EB%A6%AC%201860-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-ocean-600/25 bg-white px-5 py-3 text-[14px] font-semibold text-ocean-800 u-ease hover:border-ocean-600/50 hover:bg-ocean-50 hover:shadow-soft">
+                <iconify-icon icon="solar:map-bold" class="text-sun-600"></iconify-icon>카카오맵으로 보기 ↗
+              </a>
+              <a href="https://map.naver.com/p/search/%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C%20%EC%98%A4%EC%B2%9C%EB%A9%B4%20%EC%9B%90%EC%82%B0%EB%8F%84%EB%A6%AC%201860-6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-ocean-600/25 bg-white px-5 py-3 text-[14px] font-semibold text-ocean-800 u-ease hover:border-ocean-600/50 hover:bg-ocean-50 hover:shadow-soft">
+                <iconify-icon icon="solar:routing-2-bold" class="text-sun-600"></iconify-icon>네이버 지도로 보기 ↗
+              </a>
+              <a href="http://xn--hq1b18v54ah1g9saw1ayl20dca8546a.com/#firstPage" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-ocean-600/25 bg-white px-5 py-3 text-[14px] font-semibold text-ocean-800 u-ease hover:border-ocean-600/50 hover:bg-ocean-50 hover:shadow-soft">
+                <iconify-icon icon="solar:global-bold" class="text-sun-600"></iconify-icon>야영장 홈페이지 ↗
+              </a>
+            </div>
+
+            <figure class="mt-7 max-w-[520px] overflow-hidden rounded-2xl border border-ocean-600/15 bg-white shadow-soft">
+              <img src="photos/web/venue-view-1.jpg" alt="원산도 해수욕장 끝, 해상 데크길로 이어진 작은 섬" width="1200" height="800" loading="lazy" decoding="async" class="block aspect-[16/9] w-full object-cover" />
+              <figcaption class="bg-stone-50 px-4 py-2.5 text-[12.5px] font-medium text-stone-600">야영장 앞 해수욕장과 해상 데크길</figcaption>
+            </figure>
+          </div>
+
+          <!-- 참가비 -->
+          <div class="lg:col-span-5">
+            <div class="h-full rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-soft">
+              <div class="h-full rounded-[calc(2rem-0.375rem)] p-7">
+                <div class="flex items-center gap-3">
+                  <span class="grid h-11 w-11 place-items-center rounded-xl bg-sun-400 text-ocean-900"><iconify-icon icon="solar:hand-money-bold" class="text-xl"></iconify-icon></span>
+                  <h3 class="text-lg font-bold text-ocean-900">참가비 안내</h3>
+                </div>
+                <ul class="mt-6 space-y-3">
+                  <li class="flex items-center justify-between gap-3 rounded-2xl border border-ocean-600/12 bg-sand-100 px-4 py-3">
+                    <span class="flex items-center gap-2 text-[15px] font-semibold text-ocean-900"><iconify-icon icon="ph:tent" class="text-sun-600"></iconify-icon>참가비</span>
+                    <span class="text-[17px] font-extrabold text-sun-700">1인 4만원</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-3 rounded-2xl border border-ocean-600/12 bg-sand-100 px-4 py-3">
+                    <span class="flex items-center gap-2 text-[15px] font-semibold text-ocean-900"><iconify-icon icon="solar:sun-fog-bold" class="text-sun-600"></iconify-icon>선셋 다이닝 식사</span>
+                    <span class="text-[17px] font-extrabold text-sun-700">1인 1만원</span>
+                  </li>
+                  <li class="flex items-center justify-between gap-3 rounded-2xl border border-sun-400/50 bg-sun-50 px-4 py-3">
+                    <span class="text-[15px] font-bold text-ocean-900">합계</span>
+                    <span class="text-[19px] font-extrabold text-ocean-800">1인 5만원</span>
+                  </li>
+                </ul>
+
+                <div class="mt-7 border-t border-ocean-600/12 pt-6">
+                  <p class="flex items-center gap-2 text-[14px] font-bold text-ocean-900">
+                    <iconify-icon icon="solar:check-circle-bold" class="text-sun-600"></iconify-icon>참가비 포함 사항
+                  </p>
+                  <ul class="mt-3.5 space-y-2">
+                    <li class="flex items-start gap-2 text-[14.5px] leading-snug text-stone-700"><iconify-icon icon="solar:check-read-linear" class="mt-0.5 shrink-0 text-ocean-500"></iconify-icon>1박 2일 캠핑 사이트 이용 (사이트 쉐어)</li>
+                    <li class="flex items-start gap-2 text-[14.5px] leading-snug text-stone-700"><iconify-icon icon="solar:check-read-linear" class="mt-0.5 shrink-0 text-ocean-500"></iconify-icon>선셋 다이닝 저녁 식사</li>
+                    <li class="flex items-start gap-2 text-[14.5px] leading-snug text-stone-700"><iconify-icon icon="solar:check-read-linear" class="mt-0.5 shrink-0 text-ocean-500"></iconify-icon>웰니스 캠핑 프로그램 참여</li>
+                  </ul>
+
+                  <div class="mt-5 rounded-2xl border border-sun-400/40 bg-sun-50 px-4 py-3.5">
+                    <p class="text-[13.5px] font-semibold leading-snug text-ocean-800">미성년자는 참가비가 무료입니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--
+          ┌──────────────────────────────────────────────────────────────┐
+          │ 야영장 사진 탭                                                  │
+          │ 사진을 늘리려면 해당 탭의 .vp-grid 안에 <img> 를 추가하세요.      │
+          │ 탭을 늘리려면 버튼(role="tab")과 패널(role="tabpanel")을 짝으로   │
+          └──────────────────────────────────────────────────────────────┘
+        -->
+        <div class="reveal mt-16">
+          <div id="venueTabs" role="tablist" aria-label="야영장 사진 분류" class="flex flex-wrap gap-2 pb-1">
+            <button type="button" role="tab" id="vt-overview" aria-controls="vp-overview" aria-selected="true"  class="vt">야영장 전경</button>
+            <button type="button" role="tab" id="vt-site"     aria-controls="vp-site"     aria-selected="false" class="vt" tabindex="-1">캠핑 사이트</button>
+            <button type="button" role="tab" id="vt-view"     aria-controls="vp-view"     aria-selected="false" class="vt" tabindex="-1">주변 풍경</button>
+            <button type="button" role="tab" id="vt-mobility" aria-controls="vp-mobility" aria-selected="false" class="vt" tabindex="-1">모빌리티 플랫폼</button>
+          </div>
+
+          <div class="mt-6">
+            <div id="vp-overview" role="tabpanel" aria-labelledby="vt-overview" class="vp">
+              <p class="vp-desc">하늘에서 내려다본 원산도 해수욕장과 소록도 야영장<br />모래사장과 솔숲 사이에 사이트가 자리하고 있어요</p>
+              <div class="vp-grid">
+                <img src="photos/web/venue-overview-1.jpg" alt="원산도 해수욕장과 야영장 항공 사진 1" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-overview-2.jpg" alt="원산도 해수욕장과 야영장 항공 사진 2" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-overview-3.jpg" alt="해상 데크길이 이어진 섬 항공 사진" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <div id="vp-site" role="tabpanel" aria-labelledby="vt-site" class="vp" hidden>
+              <p class="vp-desc">바다를 바라보는 캠핑 사이트 36개<br />사이트마다 돌 테이블과 파라솔이 마련되어 있어요</p>
+              <div class="vp-grid">
+                <img src="photos/web/venue-site-1.jpg" alt="캠핑 사이트 1" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-site-2.jpg" alt="캠핑 사이트 2" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-site-3.jpg" alt="캠핑 사이트 3" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-site-4.jpg" alt="캠핑 사이트 4" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-site-5.jpg" alt="캠핑 사이트 5" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-site-6.jpg" alt="캠핑 사이트 6" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <div id="vp-view" role="tabpanel" aria-labelledby="vt-view" class="vp" hidden>
+              <p class="vp-desc">해수욕장 끝 작은 섬과 해상 데크길<br />산책하며 원산도의 바다를 가까이 느껴보세요</p>
+              <div class="vp-grid">
+                <img src="photos/web/venue-view-1.jpg" alt="해상 데크길로 이어진 작은 섬" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-view-2.jpg" alt="야영장 앞 바다와 산책로" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-view-3.jpg" alt="원산도 해안 풍경" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+            </div>
+
+            <div id="vp-mobility" role="tabpanel" aria-labelledby="vt-mobility" class="vp" hidden>
+              <p class="vp-desc">둘째 날 퇴소 후 찾아가는 원산도 모빌리티 공공플랫폼<br />모빌리티 카트와 범퍼카를 체험할 수 있어요</p>
+              <div class="vp-grid">
+                <img src="photos/web/venue-mobility-1.jpg" alt="모빌리티 공공플랫폼 범퍼카 1" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-mobility-2.jpg" alt="모빌리티 공공플랫폼 범퍼카 2" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-mobility-3.jpg" alt="모빌리티 공공플랫폼 카트 트랙" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="photos/web/venue-mobility-4.jpg" alt="모빌리티 공공플랫폼 건물과 주차장" width="1200" height="800" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= APPLY / CTA ================= -->
+    <section id="apply" class="px-5 py-20 md:py-28">
+      <div class="mx-auto w-[min(94%,74rem)]">
+        <div class="reveal relative overflow-hidden rounded-[2.5rem] border border-ocean-600/12 bg-white p-1.5 shadow-softlg">
+          <div class="relative overflow-hidden rounded-[calc(2.5rem-0.375rem)] px-6 py-16 text-center sm:px-12 sm:py-20">
+            <img src="photos/web/venue-overview-3.jpg" alt="" width="1200" height="800" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover brightness-[0.45]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ocean-900/90 via-ocean-900/70 to-ocean-900/55"></div>
+
+            <div class="relative mx-auto max-w-2xl">
+              <span class="inline-flex items-center gap-2 rounded-full border border-sun-400/40 bg-sun-400/15 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.16em] text-sun-200"><iconify-icon icon="solar:tag-horizontal-bold"></iconify-icon> 참가 접수</span>
+
+              <h2 class="mt-6 font-display text-3xl leading-snug text-white sm:text-5xl">
+                원산도 웰니스 캠핑에<br />
+                <span class="bg-gradient-to-r from-sun-200 via-sun-400 to-sun-300 bg-clip-text text-transparent">함께할 캠퍼</span>를 모집합니다
+              </h2>
+
+              <p class="mx-auto mt-6 max-w-lg text-[15px] leading-snug text-white/85 sm:text-base">
+                모집 인원 90명 · 참가비 1인 5만원 (저녁 식사 포함)<br />
+                2026. 10. 9 (금) ~ 10. 10 (토) · 원산도 소록도 야영장
+              </p>
+
+              <div class="mt-10">
+                <button type="button" id="applyBtn" class="group inline-flex items-center gap-2.5 rounded-full bg-sun-400 pl-8 pr-3 py-4 text-[16px] font-bold text-ocean-900 u-ease hover:scale-[1.02] active:scale-[0.98] hover:bg-sun-300 shadow-[0_18px_40px_-12px_rgba(242,180,60,0.7)]">
+                  참가 신청
+                  <span class="grid h-9 w-9 place-items-center rounded-full bg-ocean-900/15"><iconify-icon icon="solar:arrow-right-linear" class="u-ease group-hover:translate-x-0.5"></iconify-icon></span>
+                </button>
+              </div>
+
+              <p id="applyOpenNote" class="mt-5 text-[13px] font-medium text-sun-200">참가 신청 오픈 일정은 곧 안내드립니다</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 참가 신청 오픈 안내 팝업 -->
+    <div id="applyModal" class="fixed inset-0 z-[70] hidden items-center justify-center px-5" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+      <div class="absolute inset-0 bg-ocean-900/70 backdrop-blur-sm" data-close-modal></div>
+      <div class="relative w-full max-w-sm rounded-[2rem] border border-ocean-600/12 bg-white p-1.5 shadow-softlg">
+        <div class="rounded-[calc(2rem-0.375rem)] px-7 py-9 text-center">
+          <span class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-sun-400 text-ocean-900">
+            <iconify-icon icon="solar:calendar-mark-bold" class="text-3xl"></iconify-icon>
+          </span>
+          <h3 id="applyModalTitle" class="mt-5 text-xl font-extrabold leading-snug text-ocean-900">참가 신청 준비 중입니다</h3>
+          <p class="mt-3 text-[14px] leading-snug text-stone-500">오픈 일정이 정해지면 안내드릴게요.<br />조금만 기다려 주세요!</p>
+          <button type="button" id="applyModalClose" class="mt-7 w-full rounded-full bg-ocean-600 px-6 py-3.5 text-[15px] font-semibold text-white u-ease hover:bg-ocean-500 active:scale-[0.98]">확인</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-ocean-600/12 bg-white px-5 pb-12 pt-16">
+    <div class="mx-auto w-[min(94%,74rem)]">
+      <div class="flex flex-col justify-between gap-10 md:flex-row">
+        <div class="max-w-sm">
+          <a href="#top" class="flex items-center gap-3">
+            <img src="logo.png" alt="캠핑여지도 로고" width="40" height="40" class="h-10 w-10 shrink-0 rounded-[0.85rem] object-contain" />
+            <span class="flex flex-col leading-tight">
+              <span class="text-[14px] font-semibold text-ocean-800">2026 보령 원산도</span>
+              <span class="text-[12px] font-bold text-sun-700">웰니스 캠핑</span>
+            </span>
+          </a>
+          <p class="mt-4 text-[14px] leading-snug text-stone-500">원산도 캠핑 상품 개발 및<br />2027 섬 비엔날레 캠핑상품 시범운영</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-10 sm:grid-cols-3">
+          <div>
+            <p class="text-[12px] font-medium uppercase tracking-wider text-stone-400">바로가기</p>
+            <ul class="mt-4 space-y-2.5 text-[14px] text-stone-600">
+              <li><a href="#about" class="u-ease hover:text-sun-700">행사 소개</a></li>
+              <li><a href="#schedule" class="u-ease hover:text-sun-700">일정</a></li>
+              <li><a href="#highlights" class="u-ease hover:text-sun-700">프로그램</a></li>
+              <li><a href="#venue" class="u-ease hover:text-sun-700">야영장 소개</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-[12px] font-medium uppercase tracking-wider text-stone-400">행사 정보</p>
+            <ul class="mt-4 space-y-2.5 text-[14px] text-stone-600">
+              <li>2026. 10. 9 – 10. 10</li>
+              <li>1박 2일 · 90명</li>
+              <li>원산도 소록도 야영장</li>
+            </ul>
+          </div>
+          <div>
+            <p class="text-[12px] font-medium uppercase tracking-wider text-stone-400">연결</p>
+            <ul class="mt-4 space-y-2.5 text-[14px] text-stone-600">
+              <li><a href="https://map.kakao.com/?q=%EC%B6%A9%EB%82%A8%20%EB%B3%B4%EB%A0%B9%EC%8B%9C%20%EC%98%A4%EC%B2%9C%EB%A9%B4%20%EC%9B%90%EC%82%B0%EB%8F%84%EB%A6%AC%201860-6" target="_blank" rel="noopener noreferrer" class="u-ease hover:text-sun-700">야영장 위치 ↗</a></li>
+              <li><a href="#apply" class="u-ease hover:text-sun-700">참가 신청</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-ocean-600/12 pt-7 text-center text-[13px] text-stone-400">
+        <p>© 2026 보령 원산도 웰니스 캠핑 BY 캠핑여지도</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // 스크롤 등장
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('is-in')); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach((el) => io.observe(el));
+    })();
+
+    // 모바일 메뉴
+    (function () {
+      const menu = document.getElementById('mobileMenu');
+      const open = document.getElementById('menuBtn');
+      const close = document.getElementById('menuClose');
+      const show = () => { menu.classList.remove('hidden'); document.body.style.overflow = 'hidden'; };
+      const hide = () => { menu.classList.add('hidden'); document.body.style.overflow = ''; };
+      open && open.addEventListener('click', show);
+      close && close.addEventListener('click', hide);
+      document.querySelectorAll('.mob-link').forEach(a => a.addEventListener('click', hide));
+    })();
+
+    // 프로그램 이름 띠 — 화면 너비에 맞춰 세트를 복제해 끊김 없이 무한 반복
+    (function () {
+      const track = document.querySelector('.marquee-track');
+      if (!track) return;
+      const SPEED = 26;
+      const original = track.firstElementChild;
+      if (!original) return;
+
+      function build() {
+        while (track.children.length > 1) track.lastElementChild.remove();
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        const setWidth = original.getBoundingClientRect().width;
+        if (!setWidth) return;
+        const viewport = track.parentElement.getBoundingClientRect().width;
+        const copies = Math.max(2, Math.ceil((viewport + setWidth) / (setWidth + gap)) + 1);
+        for (let i = 1; i < copies; i++) {
+          const clone = original.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+        }
+        const shift = setWidth + gap;
+        track.style.setProperty('--mq-shift', shift + 'px');
+        track.style.setProperty('--mq-dur', (shift / SPEED) + 's');
+      }
+
+      build();
+      window.addEventListener('load', build);
+      let t;
+      window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(build, 200); });
+    })();
+
+    // 야영장 사진 슬라이드
+    (function () {
+      document.querySelectorAll('.vp-grid').forEach((track) => {
+        if (!track.children.length) return;
+
+        const gal = document.createElement('div');
+        gal.className = 'vp-gal';
+        track.parentNode.insertBefore(gal, track);
+        gal.appendChild(track);
+
+        const mkNav = (dir, icon, label) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'vp-gnav ' + dir;
+          b.setAttribute('aria-label', label);
+          b.innerHTML = '<iconify-icon icon="' + icon + '" class="text-xl"></iconify-icon>';
+          gal.appendChild(b);
+          return b;
+        };
+        const prev = mkNav('prev', 'solar:alt-arrow-left-linear', '이전 사진');
+        const next = mkNav('next', 'solar:alt-arrow-right-linear', '다음 사진');
+
+        const dots = document.createElement('div');
+        dots.className = 'vp-dots';
+        gal.appendChild(dots);
+
+        const slides = () => Array.from(track.children);
+        const step = () => {
+          const s = slides()[0];
+          if (!s) return 1;
+          const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+          return s.getBoundingClientRect().width + gap;
+        };
+
+        slides().forEach((_, i) => {
+          const d = document.createElement('button');
+          d.type = 'button';
+          d.setAttribute('aria-label', (i + 1) + '번째 사진 보기');
+          d.addEventListener('click', () => go(step() * i));
+          dots.appendChild(d);
+        });
+
+        function sync() {
+          const scrollable = track.scrollWidth - track.clientWidth > 4;
+          prev.hidden = !scrollable;
+          next.hidden = !scrollable;
+          dots.hidden = !scrollable;
+          if (!scrollable) return;
+          const i = Math.round(track.scrollLeft / step());
+          Array.from(dots.children).forEach((d, n) => d.setAttribute('aria-current', String(n === i)));
+          prev.style.opacity = track.scrollLeft <= 2 ? '.35' : '1';
+          next.style.opacity = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2 ? '.35' : '1';
+        }
+
+        let target = 0;
+        function go(left) {
+          const max = track.scrollWidth - track.clientWidth;
+          target = Math.max(0, Math.min(max, left));
+          track.scrollTo({ left: target, behavior: 'smooth' });
+        }
+        prev.addEventListener('click', () => go(target - step()));
+        next.addEventListener('click', () => go(target + step()));
+        track.addEventListener('scroll', () => {
+          clearTimeout(track._t);
+          track._t = setTimeout(() => { target = track.scrollLeft; sync(); }, 90);
+        });
+
+        if ('ResizeObserver' in window) new ResizeObserver(sync).observe(track);
+        window.addEventListener('resize', sync);
+        sync();
+      });
+    })();
+
+    // 야영장 사진 탭
+    (function () {
+      const list = document.getElementById('venueTabs');
+      if (!list) return;
+      const tabs = Array.from(list.querySelectorAll('[role="tab"]'));
+
+      function select(tab, focus) {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute('aria-selected', String(on));
+          t.tabIndex = on ? 0 : -1;
+          const panel = document.getElementById(t.getAttribute('aria-controls'));
+          if (panel) panel.hidden = !on;
+        });
+        if (focus) tab.focus();
+        window.dispatchEvent(new Event('resize'));
+      }
+
+      tabs.forEach((tab) => tab.addEventListener('click', () => select(tab, false)));
+      list.addEventListener('keydown', (e) => {
+        const i = tabs.indexOf(document.activeElement);
+        if (i < 0) return;
+        let n = null;
+        if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === 'Home') n = 0;
+        if (e.key === 'End') n = tabs.length - 1;
+        if (n === null) return;
+        e.preventDefault();
+        select(tabs[n], true);
+      });
+    })();
+
+    // 참가 신청 — 오픈 전에는 안내 팝업, 오픈 후에는 구글폼으로 연결
+    (function () {
+      // ┌──────────────────────────────────────────────────────────────┐
+      // │ 신청 오픈 일시 · 구글폼 주소                                    │
+      // │                                                              │
+      // │ OPEN_AT 이 null 이면 → 버튼이 '준비 중' 안내 팝업을 띄웁니다     │
+      // │ 오픈 일시가 정해지면 아래처럼 채우세요 (한국시간 기준)            │
+      // │   const OPEN_AT = new Date('2026-09-20T20:00:00+09:00');     │
+      // │ 그 시각이 지나면 버튼이 자동으로 구글폼을 엽니다.                 │
+      // │ FORM_URL 은 구글폼의 '응답자 링크'로 바꿔 주세요.                │
+      // └──────────────────────────────────────────────────────────────┘
+      const OPEN_AT  = null;
+      const FORM_URL = 'https://docs.google.com/forms/d/1JVJm2hutksLSypX0GFFINzjIdCk9qcc1X7KJgi0kGBM/viewform';
+
+      const modal = document.getElementById('applyModal');
+      const btn = document.getElementById('applyBtn');
+      if (!modal || !btn) return;
+
+      const isOpen = () => OPEN_AT !== null && Date.now() >= OPEN_AT.getTime();
+
+      if (isOpen()) {
+        const note = document.getElementById('applyOpenNote');
+        if (note) note.textContent = '참가 신청이 진행 중입니다 · 선착순 마감';
+      } else if (OPEN_AT) {
+        const note = document.getElementById('applyOpenNote');
+        const m = OPEN_AT.getMonth() + 1, d = OPEN_AT.getDate(), h = OPEN_AT.getHours();
+        if (note) note.textContent = m + '월 ' + d + '일 ' + h + '시 참가신청이 오픈됩니다';
+        const title = document.getElementById('applyModalTitle');
+        if (title) title.innerHTML = m + '월 ' + d + '일 ' + h + '시<br />참가신청이 오픈됩니다';
+      }
+
+      let lastFocus = null;
+
+      function open(e) {
+        if (e) e.preventDefault();
+        if (isOpen()) {
+          window.open(FORM_URL, '_blank', 'noopener');
+          return;
+        }
+        lastFocus = document.activeElement;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        modal.querySelector('#applyModalClose').focus();
+      }
+
+      function close() {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        if (lastFocus) lastFocus.focus();
+      }
+
+      btn.addEventListener('click', open);
+      modal.querySelector('#applyModalClose').addEventListener('click', close);
+      modal.querySelectorAll('[data-close-modal]').forEach(el => el.addEventListener('click', close));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+      });
+    })();
+  </script>
+</body>
+</html>
