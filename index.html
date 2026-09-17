@@ -814,7 +814,7 @@
 
               </div>
 
-              <p id="applyOpenNote" class="mt-8 text-[13px] font-medium text-sun-200">참가 신청 오픈 일정은 곧 안내드립니다</p>
+              <p id="applyOpenNote" class="mt-8 text-[13px] font-medium text-sun-200">참가 신청이 진행 중입니다</p>
             </div>
           </div>
         </div>
@@ -1065,10 +1065,10 @@
       // │ FORM_URLS 에 존별 구글폼 '응답자 링크'를 넣어 주세요.            │
       // │ 주소가 비어 있는 존은 오픈 후에도 '준비 중' 팝업을 띄웁니다.       │
       // └──────────────────────────────────────────────────────────────┘
-      const OPEN_AT  = null;
+      const OPEN_AT  = new Date('2026-09-17T00:00:00+09:00'); // 즉시 오픈
       const FORM_URLS = {
-        backpacking: 'https://docs.google.com/forms/d/1JVJm2hutksLSypX0GFFINzjIdCk9qcc1X7KJgi0kGBM/viewform', // 백패킹존
-        autocamping: '',                                                                                  // 오토캠핑존
+        backpacking: 'https://docs.google.com/forms/d/e/1FAIpQLSevfoqhpsMLcBGFd5D5orCaKeGvC00QugO4Qb5CT6gp3CF1GQ/viewform', // 백패킹존 (개인 참가자)
+        autocamping: 'https://docs.google.com/forms/d/e/1FAIpQLSdpJ7HGdZnOD9I_Y8fkZdI37n9IEF0q6lypcJDJG36Ja8mXGg/viewform', // 오토캠핑존 (가족 참가자)
       };
 
       const modal = document.getElementById('applyModal');
@@ -1079,7 +1079,7 @@
 
       if (isOpen()) {
         const note = document.getElementById('applyOpenNote');
-        if (note) note.textContent = '참가 신청이 진행 중입니다 · 선착순 마감';
+        if (note) note.textContent = '참가 신청이 진행 중입니다';
       } else if (OPEN_AT) {
         const note = document.getElementById('applyOpenNote');
         const m = OPEN_AT.getMonth() + 1, d = OPEN_AT.getDate(), h = OPEN_AT.getHours();
